@@ -1,0 +1,44 @@
+<div id="actionMenu" class="btn-toolbar">
+  <a class="btn" href="<%=_.url.action('new')%>" class="action_menu_item">New</a>
+</div>
+<% if (data.records.length > 0) { %>
+<% var table = _.table(data); %>
+<table class="table table-hover">
+<thead>
+  <tr>
+    <th rowspan="<%=table.headMaxRowspan%>"><input type="checkbox" id="checkAll" value=""></th>
+    <th rowspan="<%=table.headMaxRowspan%>"><!--operations--></th>
+    <% table.headRows[0].forEach(function(hcell) { %>
+    <th rowspan="<%=hcell.rowspan%>" colspan="<%=hcell.colspan%>"><%=hcell.text%></th>
+    <% }) %>
+  </tr>
+  <% table.headRows.shift(); %>
+  <% table.headRows.forEach(function(hrow) { %>
+  <tr>
+    <% hrow.forEach(function(hcell) { %>
+    <th rowspan="<%=hcell.rowspan%>" colspan="<%=hcell.colspan%>"><%=hcell.text%></th>
+    <% }) %>
+  </tr>
+  <% }) %>
+</thead>
+<tbody>  
+<% table.bodyRows.forEach(function(row) { %>
+  <tr>
+    <td><input type="checkbox" name="_selection[]" value="<%=row.id%>"></td>
+    <td>
+      <a href="<%=_.url.action('show', row.id)%>" class="action_show btn btn-mini">show</a>
+      <a href="<%=_.url.action('edit', row.id)%>" class="action_edit btn btn-mini">edit</a>
+      <a href="<%=_.url.action('confirmDelete', row.id)%>" class="action_delete btn btn-mini">delete</a>
+    </td>
+  <% row.forEach(function(cell) { %>
+    <td>
+      <%=cell%>
+    </td>
+  <% }) %>
+  </tr>
+<% }) %>
+</tbody>
+</table>
+<% } else { %>
+<p>No record.</p>
+<% } %>

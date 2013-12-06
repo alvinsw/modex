@@ -1,0 +1,10 @@
+<% var doc = data.record %>
+<% var fields = data.fields %>
+<p>Are you sure you want to delete the following record?</p>
+<%- _.form(fields, doc, 'read') -%>
+<form id="delete" name="delete" method="post" action="<%=_.url.action('delete',doc._id)?_method=delete%>">
+  <button type="submit" name="_redirect" value="..">Delete</button>
+</form>
+<form id="cancel" name="cancel" method="get" action="..">
+  <button type="submit">Cancel</button>
+</form>

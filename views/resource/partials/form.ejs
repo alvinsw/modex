@@ -1,0 +1,6 @@
+<% fields.forEach(function(f) { %>
+<% var value = '' %>
+<% if (record) value = record[f.name] || '' %>
+<%-_.field(f, value, {view:'edit'})%>
+<br />
+<% }) %>

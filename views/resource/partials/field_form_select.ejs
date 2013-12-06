@@ -1,0 +1,9 @@
+<% 
+multiple = multiple ? 'multiple="multiple"' : '';
+%>
+<select name="<%=name%>" id="<%=id%>" <%=multiple%>>
+<%  options.forEach(function(o) { %>
+<%    var selected = value == o.id ? 'selected' : '' %>
+      <option value="<%=o.id%>" <%=selected%>><%=o.text%></option>
+<%  }) %>
+</select>

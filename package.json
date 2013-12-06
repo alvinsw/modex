@@ -1,0 +1,33 @@
+{
+  "name": "modex",
+  "version": "0.0.2",
+  "description": "Modular system for Express JS 3.x",
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alvinsw/modex.git"
+  },
+  "keywords": [
+    "modular",
+    "express"
+  ],
+  "author": {
+    "name": "Alvin Sebastian",
+    "email": "a.sebastian@qut.edu.au"
+  },
+  "license": "GNU GPL v3",
+  "dependencies": {
+    "async": "*",
+    "jsx": "git://github.com/alvinsw/jsx.git",
+    "methods": "0.1.0",
+    "express": "3.4.x",
+    "hjs": "0.0.x",
+    "ejs-locals": "1.0.x",
+    "less-middleware": "0.1.x"
+  },
+  "devDependencies": {
+  }
+}
